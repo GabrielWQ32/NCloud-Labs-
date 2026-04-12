@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NCloud Labs — AWS Cloud Consulting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Animated Background Canvas -->
+  <canvas id="grid-canvas"></canvas>
+
+  <!-- ── NAV ─────────────────────────────────────────── -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo" aria-label="NCloud Labs home">
+      <span class="nc">NC</span><span class="logo-rest">loud labs</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#creds">Credentials</a></li>
+      <li><a href="#contact" class="nav-cta">Get Consultation</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ───────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span class="mono">AWS · Cloud Infrastructure · Security</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="nc-hero">NC</span><span class="cloud-hero">loud labs</span>
+      </h1>
+      <p class="hero-tagline" id="typedTagline"></p>
+      <p class="hero-sub">
+        Enterprise-grade AWS architecture — without the enterprise price tag.<br />
+        Built specifically for mid-market companies ready to scale smarter.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Book Free Consultation</a>
+        <a href="#services" class="btn-ghost">Explore Services ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-val">$500</span>
+          <span class="stat-label">Starting From</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-val">100%</span>
+          <span class="stat-label">AWS Native</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-val">Custom</span>
+          <span class="stat-label">Pricing Always</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ───────────────────────────────────── -->
+  <section id="services">
+    <div class="section-inner">
+      <div class="section-label"><span class="mono">// 01</span> What We Do</div>
+      <h2 class="section-title">AWS Cloud Services,<br /><em>Exactly What You Need</em></h2>
+      <p class="section-sub">
+        Mid-sized businesses deserve the same cloud infrastructure as the Fortune 500 — at a fraction of the cost.
+        Every engagement is scoped, priced transparently, and delivered without bloat.
+      </p>
+
+      <div class="services-grid">
+
+        <div class="service-card" data-index="01">
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M13 20h14M20 13v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Cloud Architecture & Migration</h3>
+          <p>Custom AWS architecture design — VPCs, subnets, load balancers, Auto Scaling. We migrate your on-prem or legacy systems with zero-downtime strategies.</p>
+          <span class="svc-tag">EC2 · VPC · Route53 · CloudFront</span>
+        </div>
+
+        <div class="service-card" data-index="02">
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="8" width="24" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M15 20l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Cost Optimization & FinOps</h3>
+          <p>Most companies overpay AWS by 30–50%. We audit your bill, right-size resources, implement Reserved Instance strategies, and set up budget guardrails.</p>
+          <span class="svc-tag">Cost Explorer · Savings Plans · Trusted Advisor</span>
+        </div>
+
+        <div class="service-card" data-index="03">
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M20 8l10 5v10l-10 5-10-5V13l10-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M20 18v10M10 13l10 5 10-5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Security & Compliance</h3>
+          <p>IAM hardening, GuardDuty threat detection, Security Hub, CloudTrail auditing, and VPC security group reviews. Built to meet SOC2, HIPAA, and PCI standards.</p>
+          <span class="svc-tag">IAM · GuardDuty · Shield · WAF</span>
+        </div>
+
+        <div class="service-card" data-index="04">
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none"><polyline points="8,28 16,18 22,24 32,12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Infrastructure as Code</h3>
+          <p>Version-controlled, repeatable infrastructure using Terraform and AWS CDK. Deploy the same environment to dev, staging, and prod with a single command.</p>
+          <span class="svc-tag">Terraform · AWS CDK · CloudFormation</span>
+        </div>
+
+        <div class="service-card" data-index="05">
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="14" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="22" y="14" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M18 20h4" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Serverless & Container Workloads</h3>
+          <p>Lambda functions, ECS/EKS container orchestration, API Gateway, and event-driven architectures. Scale to zero when idle, handle any spike on demand.</p>
+          <span class="svc-tag">Lambda · ECS · EKS · API Gateway</span>
+        </div>
+
+        <div class="service-card" data-index="06">
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="16" rx="12" ry="5" stroke="currentColor" stroke-width="1.5"/><path d="M8 16v8c0 2.76 5.37 5 12 5s12-2.24 12-5v-8" stroke="currentColor" stroke-width="1.5"/><path d="M8 20c0 2.76 5.37 5 12 5s12-2.24 12-5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Managed Database Solutions</h3>
+          <p>RDS multi-AZ deployments, DynamoDB design, ElastiCache for performance, and Aurora Serverless for unpredictable workloads — all backed up and monitored.</p>
+          <span class="svc-tag">RDS · DynamoDB · Aurora · ElastiCache</span>
+        </div>
+
+        <div class="service-card" data-index="07">
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="10" cy="20" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="30" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="30" cy="30" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M14 18l12-6M14 22l12 6" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>CI/CD Pipeline Implementation</h3>
+          <p>Automated build, test, and deployment pipelines with CodePipeline, GitHub Actions, or Jenkins on AWS. Ship code faster with confidence.</p>
+          <span class="svc-tag">CodePipeline · CodeBuild · GitHub Actions</span>
+        </div>
+
+        <div class="service-card" data-index="08">
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M8 28V18l6-4 6 4 6-4 6 4v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 28h24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Monitoring & Observability</h3>
+          <p>CloudWatch dashboards, X-Ray distributed tracing, SNS alerting, and custom metrics. You'll know about problems before your customers do.</p>
+          <span class="svc-tag">CloudWatch · X-Ray · CloudTrail · SNS</span>
+        </div>
+
+      </div>
+
+      <div class="services-cta">
+        <p class="mono small">Every service is custom-scoped. Pricing via consultation only.</p>
+        <a href="#contact" class="btn-primary">Start with a Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING BAND ───────────────────────────────── -->
+  <section id="pricing-band">
+    <div class="section-inner band-inner">
+      <div class="band-text">
+        <h2>No retainers. No surprises.</h2>
+        <p>Custom project quotes from <strong>$500 – $2,000</strong> depending on scope. Built for businesses that need real infrastructure expertise without paying for a full-time cloud team.</p>
+      </div>
+      <a href="#contact" class="btn-primary">Get Your Custom Quote</a>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ───────────────────────────────────────── -->
+  <section id="about">
+    <div class="section-inner about-grid">
+
+      <div class="about-photo-col">
+        <div class="photo-frame" id="photoFrame">
+          <div class="photo-placeholder">
+            <svg viewBox="0 0 80 80" fill="none" width="60"><circle cx="40" cy="30" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M14 70c0-14.36 11.64-26 26-26h0c14.36 0 26 11.64 26 26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="mono small">Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="school-logos">
+          <div class="school-badge">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Kennesaw_State_Owls_logo.svg/200px-Kennesaw_State_Owls_logo.svg.png" alt="Kennesaw State University" onerror="this.style.display='none';this.nextSibling.style.display='flex'" />
+            <div class="school-fallback" style="display:none">
+              <span class="school-abbr ksu">KSU</span>
+            </div>
+            <span class="school-name">Kennesaw State University</span>
+          </div>
+          <div class="school-badge">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Above_Gotham.jpg/200px-Above_Gotham.jpg" alt="" style="display:none" />
+            <div class="school-gt">
+              <span class="school-abbr gt">GT</span>
+            </div>
+            <span class="school-name">Georgia Institute of Technology</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="section-label"><span class="mono">// 02</span> About</div>
+        <h2 class="section-title">The Engineer Behind<br /><em>NCloud Labs</em></h2>
+
+        <div class="about-body">
+          <p>
+            <strong>Gabriel Weinstein Qualls</strong> is a cloud infrastructure specialist and the founder of NCloud Labs. 
+            With academic grounding from <strong>Kennesaw State University</strong> in technology — and hands-on exposure to 
+            cloud-focused research initiatives in collaboration with engineers from <strong>Georgia Tech's</strong> technical community — 
+            Gabriel brings a rare combination of rigorous theory and real-world implementation.
+          </p>
+          <p>
+            His work centers on one belief: that small and mid-sized businesses are consistently underserved by the cloud 
+            industry — either priced out of quality consulting or handed cookie-cutter solutions by firms that don't understand 
+            their actual scale. NCloud Labs was built to close that gap.
+          </p>
+          <p>
+            Gabriel's security-first mindset — shaped by formal certifications in cybersecurity and cloud architecture — means 
+            every architecture he designs is hardened by default, not as an afterthought.
+            Whether it's a first-time cloud migration or a cost optimization overhaul of an existing AWS environment, 
+            the approach is always custom, always transparent, and always priced to compete with — and beat — traditional IT teams.
+          </p>
+        </div>
+
+        <!-- Placeholder note for Georgia Tech — fill in with real project/experience -->
+        <!-- 
+          ⚠️ GABRIEL: Add your real GT connection here (a course, collaborative event, community, etc.)
+          The current wording ("collaboration with Georgia Tech's technical community") is intentionally 
+          vague but technically accurate only if you have some real touchpoint. Replace with specifics.
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CREDENTIALS ────────────────────────────────── -->
+  <section id="creds">
+    <div class="section-inner">
+      <div class="section-label"><span class="mono">// 03</span> Credentials</div>
+      <h2 class="section-title">Verified Expertise</h2>
+
+      <div class="creds-grid">
+
+        <div class="cred-card">
+          <div class="cred-badge google">G</div>
+          <div class="cred-info">
+            <span class="cred-issuer">Google</span>
+            <h4>Cybersecurity Professional Certificate</h4>
+            <p>Threat analysis, incident response, SIEM tooling, and network security fundamentals — applied directly to AWS security architecture.</p>
+            <span class="cred-status verified">✓ Verified</span>
+          </div>
+        </div>
+
+        <div class="cred-card">
+          <div class="cred-badge comptia">C+</div>
+          <div class="cred-info">
+            <span class="cred-issuer">CompTIA</span>
+            <h4>Security+ Certification</h4>
+            <p>Industry-standard validation of cybersecurity knowledge — covering cryptography, access control, vulnerability management, and compliance frameworks.</p>
+            <span class="cred-status verified">✓ Verified</span>
+          </div>
+        </div>
+
+        <div class="cred-card featured-cred">
+          <div class="cred-badge aws">AWS</div>
+          <div class="cred-info">
+            <span class="cred-issuer">Amazon Web Services</span>
+            <h4>Solutions Architect — Associate</h4>
+            <p>Advanced AWS architectural knowledge spanning compute, storage, networking, databases, security, and cost optimization — the gold standard for cloud design.</p>
+            <span class="cred-status in-progress">⟳ Completing</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- School logos row -->
+      <div class="edu-row">
+        <div class="edu-item">
+          <div class="edu-logo-box ksu-box">
+            <span class="edu-abbr">KSU</span>
+          </div>
+          <div class="edu-details">
+            <span class="edu-school">Kennesaw State University</span>
+            <span class="edu-degree">B.A. — Technology &amp; Computing</span>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-logo-box gt-box">
+            <span class="edu-abbr gt-abbr">GT</span>
+          </div>
+          <div class="edu-details">
+            <span class="edu-school">Georgia Institute of Technology</span>
+            <span class="edu-degree">Cloud Infrastructure Research Exposure</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ─────────────────────────────────────── -->
+  <section id="contact">
+    <div class="section-inner contact-inner">
+      <div class="section-label"><span class="mono">// 04</span> Get Started</div>
+      <h2 class="section-title">Let's Talk Cloud</h2>
+      <p class="section-sub">
+        Every engagement starts with a free consultation. Tell us where you are, where you want to be,
+        and we'll tell you exactly what it takes — and what it costs — to get there.
+      </p>
+
+      <div class="contact-cards">
+        <a href="mailto:Gabrielwq23@gmail.com" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 40 40" fill="none" width="28"><rect x="6" y="10" width="28" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M6 13l14 9 14-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Email</span>
+            <span class="contact-value">Gabrielwq23@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="tel:9197045203" class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 40 40" fill="none" width="28"><path d="M12 8h4l2 6-3 2a18 18 0 0 0 9 9l2-3 6 2v4a2 2 0 0 1-2 2A26 26 0 0 1 10 10a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Phone / Text</span>
+            <span class="contact-value">(919) 704-5203</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="contact-note mono small">
+        Typical response within 24 hours · Consultations held via video call or phone · No commitment required
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#hero" class="nav-logo footer-logo">
+        <span class="nc">NC</span><span class="logo-rest">loud labs</span>
+      </a>
+      <p class="footer-copy mono small">© 2025 NCloud Labs · Gabriel Weinstein Qualls · All AWS. All Custom.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
